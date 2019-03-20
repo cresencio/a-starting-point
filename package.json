@@ -1,0 +1,25 @@
+{
+  "name": "asp-theme",
+  "version": "1.0.0",
+  "description": "A starter theme for WordPress.",
+  "main": "index.js",
+  "scripts": {
+    "test": "empty"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cresencio/asp-theme.git"
+  },
+  "keywords": [
+    "wordpress"
+  ],
+  "author": "@cresencio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cresencio/asp-theme/issues"
+  },
+  "homepage": "https://github.com/cresencio/asp-theme#readme",
+  "devDependencies": {
+    "bootstrap": "^4.3.1"
+  }
+}
