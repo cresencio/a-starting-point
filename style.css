@@ -1072,19 +1072,20 @@ pre {
   .offset-xl-11 {
     margin-left: 91.6666666667%; } }
 
-.table {
+.table, table {
   width: 100%;
   margin-bottom: 1rem;
   color: #212529; }
-  .table th,
-  .table td {
+  .table th, table th,
+  .table td,
+  table td {
     padding: 0.75rem;
     vertical-align: top;
     border-top: 1px solid #dee2e6; }
-  .table thead th {
+  .table thead th, table thead th {
     vertical-align: bottom;
     border-bottom: 2px solid #dee2e6; }
-  .table tbody + tbody {
+  .table tbody + tbody, table tbody + tbody {
     border-top: 2px solid #dee2e6; }
 
 .table-sm th,
@@ -1260,12 +1261,12 @@ pre {
   .table-hover .table-active:hover > th {
     background-color: rgba(0, 0, 0, 0.075); }
 
-.table .thead-dark th {
+.table .thead-dark th, table .thead-dark th {
   color: #fff;
   background-color: #343a40;
   border-color: #454d55; }
 
-.table .thead-light th {
+.table .thead-light th, table .thead-light th {
   color: #495057;
   background-color: #e9ecef;
   border-color: #dee2e6; }
@@ -7044,10 +7045,11 @@ a.text-dark:hover, a.text-dark:focus {
     display: none; }
   .badge {
     border: 1px solid #000; }
-  .table {
+  .table, table {
     border-collapse: collapse !important; }
+    
     .table td,
-    .table th {
+    table td, .table th, table th {
       background-color: #fff !important; }
   .table-bordered th,
   .table-bordered td {
@@ -7059,7 +7061,7 @@ a.text-dark:hover, a.text-dark:focus {
     .table-dark thead th,
     .table-dark tbody + tbody {
       border-color: #dee2e6; }
-  .table .thead-dark th {
+  .table .thead-dark th, table .thead-dark th {
     color: inherit;
     border-color: #dee2e6; } }
 
@@ -7069,6 +7071,16 @@ a.text-dark:hover, a.text-dark:focus {
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
+img {
+  height: auto;
+  /* Make sure images are scaled correctly. */
+  max-width: 100%;
+  /* Adhere to container width. */ }
+
+figure {
+  margin: 1em 0;
+  /* Extra wide images within figure tags don't overflow the content area. */ }
+
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
@@ -7119,13 +7131,17 @@ a {
         width: 200px; }
     .main-navigation ul li:hover > ul,
     .main-navigation ul li.focus > ul {
-      left: auto; }
+      left: auto;
+      background-color: #fff; }
   .main-navigation li {
     float: left;
     position: relative; }
+    .main-navigation li:hover, .main-navigation li.focus {
+      background-color: #e5e5e5; }
   .main-navigation a {
     display: block;
-    text-decoration: none; }
+    text-decoration: none;
+    padding: 1rem; }
 
 /* Small menu. */
 .menu-toggle,
