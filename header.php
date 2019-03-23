@@ -25,6 +25,9 @@
 	<a class="skip-link screen-reader-text sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'asp-theme' ); ?></a>
 
 	<header id="masthead" class="site-header">
+
+		<?php get_sidebar('header'); ?>
+
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col">
