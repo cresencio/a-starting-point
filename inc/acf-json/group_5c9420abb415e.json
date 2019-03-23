@@ -1,11 +1,11 @@
 {
-    "key": "group_5c941c6b17f14",
-    "title": "Widgets",
+    "key": "group_5c9420abb415e",
+    "title": "Menus",
     "fields": [
         {
-            "key": "field_5c941c70ebf67",
+            "key": "field_5c9420cb64cb9",
             "label": "Custom CSS Class Name",
-            "name": "asp_custom_widget_class",
+            "name": "asp_custom_menu_class",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -25,7 +25,7 @@
     "location": [
         [
             {
-                "param": "widget",
+                "param": "nav_menu",
                 "operator": "==",
                 "value": "all"
             }
@@ -39,5 +39,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1553211676
+    "modified": 1553213702
 }
