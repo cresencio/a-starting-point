@@ -113,6 +113,15 @@ function asp_theme_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Header', 'asp-theme' ),
+		'id'            => 'sidebar-header',
+		'description'   => esc_html__( 'Add header widgets here.', 'asp-theme' ),
+		'before_widget' => '<section id="%1$s" class="widget col asp-theme-acf %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
 }
 add_action( 'widgets_init', 'asp_theme_widgets_init' );
 
