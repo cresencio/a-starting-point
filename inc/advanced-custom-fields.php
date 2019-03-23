@@ -35,7 +35,6 @@ function asp_theme_acf_json_save_point( $path ) {
     // update path
     $path = get_stylesheet_directory() . '/inc/acf-json';
 
-
     // return
     return $path;
 
