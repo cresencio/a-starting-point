@@ -108,7 +108,7 @@ function asp_theme_widgets_init() {
 		'name'          => esc_html__( 'Sidebar', 'asp-theme' ),
 		'id'            => 'sidebar-1',
 		'description'   => esc_html__( 'Add widgets here.', 'asp-theme' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'before_widget' => '<section id="%1$s" class="widget asp-theme-acf %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
@@ -172,3 +172,81 @@ if ( class_exists( 'WooCommerce' ) ) {
  * Load Advanced Custom Fields
  */
 require get_template_directory() . '/inc/advanced-custom-fields.php';
+
+// simple function for dealing with text fields
+function clean_acf_text_fields($string) {
+  // sanitize the text before anything
+  $string = sanitize_text_field( $string );
+  //replace any remaining special characters with white space (except for - and _)
+  $string = preg_replace('/[^A-Za-z0-9\-_]/', ' ', $string);
+  return $string;
+}
+// Add the custom classes to widgets
+add_filter('dynamic_sidebar_params', 'acf_widget_custom_class');
+function acf_widget_custom_class( $params ) {
+	// get widget vars
+	$widget_name = $params[0]['widget_name'];
+	$widget_id = $params[0]['widget_id'];
+	// get acf value
+	$custom_css_class_value = clean_acf_text_fields(get_field('asp_custom_widget_class', 'widget_' . $widget_id));
+	if( $custom_css_class_value ) {
+		$params[0]['before_widget'] = str_replace( 'asp-theme-acf', esc_html( $custom_css_class_value ), $params[0]['before_widget'] );
+	}
+	// return
+	return $params;
+}
+
+// add the BS nav class to all menus
+
+function add_bs_nav_class_to_menus( $args )
+{
+	$args['menu_class'] .= ' nav';
+	return $args;
+}
+
+add_filter( 'wp_nav_menu_args', 'add_bs_nav_class_to_menus' );
+
+// add BS nav-item class to all li tags
+function add_bs_link_item_class_to_list_items($classes, $item, $args) {
+  $classes[] = 'nav-item';
+  return $classes;
+}
+add_filter('nav_menu_css_class', 'add_bs_link_item_class_to_list_items', 1, 3);
+
+// add the BS nav-link class to all menu links
+function add_bs_nav_link_class_to_menu_links($atts) {
+  $atts['class'] = "nav-link";
+  return $atts;
+}
+add_filter( 'nav_menu_link_attributes', 'add_bs_nav_link_class_to_menu_links');
+
+// add_filter('wp_nav_menu_items', 'my_wp_nav_menu_items', 10, 2);
+
+// function my_wp_nav_menu_items( $items, $args ) {
+//
+// 	echo "<pre>";
+//
+// 	print_r($args->menu_class);
+//
+// 	echo "</pre>";
+//
+// 	// get menu
+// 	$menu = wp_get_nav_menu_object($args->menu);
+//
+// 	// check if field value exists
+// 	if( get_field('asp_custom_menu_class', $menu) ) {
+//
+// 		// vars
+// 		$custom_menu_class = get_field('asp_custom_menu_class', $menu);
+//
+// 		$args->menu->menu_class .= " " . $custom_menu_class;
+//
+// 		// append html
+// 		$items = $custom_menu_class . $items;
+//
+// 	}
+//
+// 	// return
+// 	return $items;
+//
+// }
