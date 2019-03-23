@@ -7104,44 +7104,44 @@ a {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
-.main-navigation {
-  clear: both;
-  display: block;
-  float: left;
-  width: 100%; }
-  .main-navigation ul {
-    display: none;
-    list-style: none;
-    margin: 0;
-    padding-left: 0; }
-    .main-navigation ul ul {
-      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-      float: left;
-      position: absolute;
-      top: 100%;
-      left: -999em;
-      z-index: 99999; }
-      .main-navigation ul ul ul {
-        left: -999em;
-        top: 0; }
-      .main-navigation ul ul li:hover > ul,
-      .main-navigation ul ul li.focus > ul {
-        left: 100%; }
-      .main-navigation ul ul a {
-        width: 200px; }
-    .main-navigation ul li:hover > ul,
-    .main-navigation ul li.focus > ul {
-      left: auto;
-      background-color: #fff; }
-  .main-navigation li {
+.main-navigation ul {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding-left: 0; }
+  .main-navigation ul ul {
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
     float: left;
-    position: relative; }
-    .main-navigation li:hover, .main-navigation li.focus {
-      background-color: #e5e5e5; }
-  .main-navigation a {
-    display: block;
-    text-decoration: none;
-    padding: 1rem; }
+    position: absolute;
+    top: 100%;
+    left: -999em;
+    z-index: 99999; }
+    .main-navigation ul ul ul {
+      left: -999em;
+      top: 0; }
+    .main-navigation ul ul li:hover > ul,
+    .main-navigation ul ul li.focus > ul {
+      left: 100%; }
+    .main-navigation ul ul a {
+      width: 200px; }
+  .main-navigation ul li:hover > ul,
+  .main-navigation ul li.focus > ul {
+    left: auto;
+    background-color: #fff; }
+
+.main-navigation li {
+  float: left;
+  position: relative; }
+  .main-navigation li.current-menu-item {
+    background-color: #e5e5e5; }
+  .main-navigation li:hover, .main-navigation li.focus {
+    background-color: #e5e5e5; }
+    .main-navigation li:hover .sub-menu, .main-navigation li.focus .sub-menu {
+      display: block; }
+
+.main-navigation a {
+  text-decoration: none;
+  padding: 1rem; }
 
 /* Small menu. */
 .menu-toggle,
@@ -7152,7 +7152,7 @@ a {
   .menu-toggle {
     display: none; }
   .main-navigation ul {
-    display: block; } }
+    display: flex; } }
 
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
