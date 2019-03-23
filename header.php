@@ -50,12 +50,19 @@
 					<nav id="site-navigation" class="main-navigation">
 						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'asp-theme' ); ?></button>
 						<?php
+
+						$custom_menu_class = get_field('asp_custom_menu_class', wp_get_nav_menu_object('all-pages'));
+
 						wp_nav_menu( array(
 							'theme_location' => 'menu-1',
 							'menu_id'        => 'primary-menu',
+							'menu_class'     => ( $custom_menu_class ) ? $custom_menu_class : 'foo',
 						) );
+
 						?>
+
 					</nav><!-- #site-navigation -->
+
 				</div>
 			</div>
 		</div>
@@ -64,5 +71,3 @@
 	<div id="content" class="site-content">
 		<div class="container-fluid">
 			<div class="row">
-
-			
