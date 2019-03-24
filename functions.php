@@ -178,32 +178,14 @@ if ( class_exists( 'WooCommerce' ) ) {
 }
 
 /**
- * Load Advanced Custom Fields
+ * Load Advanced Custom Fields plugin
  */
 require get_template_directory() . '/inc/advanced-custom-fields.php';
 
-// simple function for dealing with text fields
-function clean_acf_text_fields($string) {
-  // sanitize the text before anything
-  $string = sanitize_text_field( $string );
-  //replace any remaining special characters with white space (except for - and _)
-  $string = preg_replace('/[^A-Za-z0-9\-_]/', ' ', $string);
-  return $string;
-}
-// Add the custom classes to widgets
-add_filter('dynamic_sidebar_params', 'acf_widget_custom_class');
-function acf_widget_custom_class( $params ) {
-	// get widget vars
-	$widget_name = $params[0]['widget_name'];
-	$widget_id = $params[0]['widget_id'];
-	// get acf value
-	$custom_css_class_value = clean_acf_text_fields(get_field('asp_custom_widget_class', 'widget_' . $widget_id));
-	if( $custom_css_class_value ) {
-		$params[0]['before_widget'] = str_replace( 'asp-theme-acf', esc_html( $custom_css_class_value ), $params[0]['before_widget'] );
-	}
-	// return
-	return $params;
-}
+/**
+ * Load Advanced Custom Fields filters
+ */
+require get_template_directory() . '/inc/acf-filters.php';
 
 // add the BS nav class to all menus
 
@@ -228,19 +210,3 @@ function add_bs_nav_link_class_to_menu_links($atts) {
   return $atts;
 }
 add_filter( 'nav_menu_link_attributes', 'add_bs_nav_link_class_to_menu_links');
-
-// add custom field value to menu class if it exists
-
-function my_wp_nav_menu_objects( $items, $args ) {
-
-	$menu = $args->menu;
-
-	$custom_menu_class = get_field('asp_custom_menu_class', $menu);
-
-	if($custom_menu_class){
-			$args->menu_class .= ' '. $custom_menu_class;
-	}
-
-	return $items;
-}
-add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
