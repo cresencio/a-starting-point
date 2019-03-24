@@ -24,14 +24,14 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'asp-theme' ); ?></a>
 
-	<header id="masthead" class="site-header">
+	<header id="masthead" class="site-header" style="background: no-repeat center/80% url(<?php header_image(); ?>); background-size: cover;">
 
 		<?php get_sidebar('header'); ?>
 
-		<div class="container-fluid">
+		<div class="container-fluid p-0">
 			<div class="row">
 				<div class="col">
-					<div class="site-branding">
+					<div class="site-branding px-3">
 						<?php
 						the_custom_logo();
 						if ( is_front_page() && is_home() ) :
