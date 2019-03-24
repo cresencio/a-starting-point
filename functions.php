@@ -229,33 +229,18 @@ function add_bs_nav_link_class_to_menu_links($atts) {
 }
 add_filter( 'nav_menu_link_attributes', 'add_bs_nav_link_class_to_menu_links');
 
-// add_filter('wp_nav_menu_items', 'my_wp_nav_menu_items', 10, 2);
+// add custom field value to menu class if it exists
 
-// function my_wp_nav_menu_items( $items, $args ) {
-//
-// 	echo "<pre>";
-//
-// 	print_r($args->menu_class);
-//
-// 	echo "</pre>";
-//
-// 	// get menu
-// 	$menu = wp_get_nav_menu_object($args->menu);
-//
-// 	// check if field value exists
-// 	if( get_field('asp_custom_menu_class', $menu) ) {
-//
-// 		// vars
-// 		$custom_menu_class = get_field('asp_custom_menu_class', $menu);
-//
-// 		$args->menu->menu_class .= " " . $custom_menu_class;
-//
-// 		// append html
-// 		$items = $custom_menu_class . $items;
-//
-// 	}
-//
-// 	// return
-// 	return $items;
-//
-// }
+function my_wp_nav_menu_objects( $items, $args ) {
+
+	$menu = $args->menu;
+
+	$custom_menu_class = get_field('asp_custom_menu_class', $menu);
+
+	if($custom_menu_class){
+			$args->menu_class .= ' '. $custom_menu_class;
+	}
+
+	return $items;
+}
+add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
