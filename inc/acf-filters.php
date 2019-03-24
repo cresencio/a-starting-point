@@ -25,9 +25,9 @@ function acf_widget_custom_class( $params ) {
 }
 add_filter('dynamic_sidebar_params', 'acf_widget_custom_class');
 
-// add custom field value to menu class if it exists
+// add custom field value to menu class if it exists, also add icon for menu items
 
-function my_wp_nav_menu_objects( $items, $args ) {
+function asp_theme_wp_nav_menu_objects( $items, $args ) {
 
 	$menu = $args->menu;
 
@@ -37,6 +37,23 @@ function my_wp_nav_menu_objects( $items, $args ) {
 			$args->menu_class .= ' '. clean_acf_text_fields($custom_menu_class);
 	}
 
+  // loop
+	foreach( $items as &$item ) {
+
+		// vars
+		$icon = get_field('icon', $item);
+		$hide_text = get_field('hide_text', $item);
+
+
+		// append icon
+		if( $icon ) {
+
+      ( $hide_text ) ? $item->title = '<i class="fas fa-'.$icon.'"></i>' : $item->title = '<i class="fas fa-'.$icon.'"></i> '. $item->title;
+
+		}
+
+	}
+
 	return $items;
 }
-add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
+add_filter('wp_nav_menu_objects', 'asp_theme_wp_nav_menu_objects', 10, 2);
