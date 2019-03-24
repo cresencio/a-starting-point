@@ -20,7 +20,9 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<?php $sidebar_position = get_theme_mod('sidebar_position', 'sidebar-right'); ?>
+
+<body <?php body_class($sidebar_position); ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'asp-theme' ); ?></a>
 
@@ -28,10 +30,10 @@
 
 		<?php get_sidebar('header'); ?>
 
-		<div class="container-fluid p-0">
+		<div class="container-fluid">
 			<div class="row">
-				<div class="col">
-					<div class="site-branding px-3">
+				<!-- <div class="col"> -->
+					<div class="site-branding col-12">
 						<?php
 						the_custom_logo();
 						if ( is_front_page() && is_home() ) :
@@ -50,7 +52,7 @@
 						<?php endif; ?>
 					</div><!-- .site-branding -->
 
-					<nav id="site-navigation" class="main-navigation">
+					<nav id="site-navigation" class="main-navigation col p-0">
 						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'asp-theme' ); ?></button>
 						<?php
 
@@ -63,7 +65,7 @@
 
 					</nav><!-- #site-navigation -->
 
-				</div>
+				<!-- </div> -->
 			</div>
 		</div>
 	</header><!-- #masthead -->
