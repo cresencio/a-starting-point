@@ -48,7 +48,7 @@ function asp_theme_wp_nav_menu_objects( $items, $args ) {
 		// append icon
 		if( $icon ) {
 
-      ( $hide_text ) ? $item->title = '<i class="fas fa-'.$icon.'"></i>' : $item->title = '<i class="fas fa-'.$icon.'"></i> '. $item->title;
+      ( $hide_text ) ? $item->title = '<i class="'.$icon.'"></i>' : $item->title = '<i class="fas fa-'.$icon.'"></i> '. $item->title;
 
 		}
 
