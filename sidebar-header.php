@@ -18,4 +18,4 @@ if ( ! is_active_sidebar( 'sidebar-header' ) ) {
 				<?php dynamic_sidebar( 'sidebar-header' ); ?>
 			</div>
 	</div>
-</div><!-- #secondary -->
+</div><!-- #header-widgets -->
