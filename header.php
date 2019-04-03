@@ -53,10 +53,7 @@
 					</div><!-- .site-branding -->
 
 					<nav id="site-navigation" class="main-navigation">
-						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-							<span class="sr-only"><?php esc_html_e( 'Primary Menu', 'asp-theme' ); ?></span>
-							menu toggle
-						</button>
+						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="sr-only"><?php esc_html_e( 'Primary Menu', 'asp-theme' ); ?></span>menu toggle</button>
 						<?php
 
 						wp_nav_menu( array(

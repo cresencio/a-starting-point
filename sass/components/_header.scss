@@ -2,30 +2,26 @@
   @include make-col-ready();
 }
 
+.menu-toggle{
+  @include media-breakpoint-up(sm) {
+    display: none;
+  }
+}
 
-// .main-navigation{
-//
-//
-//     max-height: 50px;
-//     overflow: hidden;
-//
-//
-//   &.toggled{
-//
-//       height: auto;
-//       transition: max-height .5s ease-out;
-//       max-height: 100%;
-//
-//   }
-// }
+.main-navigation{
 
-// // This stuff matters!
-// .section {
-//   overflow:hidden;
-//   transition:max-height 0.3s ease-out; // note that we're transitioning max-height, not height!
-//   height:auto;
-//   max-height:600px; // still have to hard-code a value!
-// }
-// .section.collapsed {
-//   max-height:0;
-// }
+  overflow: hidden;
+
+  .nav-menu{
+    max-height: 0;
+    margin: 0;
+  }
+
+  &.toggled{
+    .nav-menu{
+      height: auto;
+      max-height: 999px;
+      transition: max-height .8s ease-out;
+    }
+  }
+}
