@@ -4698,6 +4698,12 @@ a.text-dark:hover, a.text-dark:focus {
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
+#primary, #secondary {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px; }
+
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
@@ -4712,9 +4718,8 @@ img {
 
 figure {
   margin: 1em 0;
-  /* Extra wide images within figure tags don't overflow the content area. */ }
-  figure img {
-    max-width: 100%; }
+  /* Extra wide images within figure tags don't overflow the content area. */
+  max-width: 100%; }
 
 textarea, input {
   width: 100%;
