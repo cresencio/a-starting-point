@@ -4698,46 +4698,6 @@ a.text-dark:hover, a.text-dark:focus {
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
-#primary, #secondary {
-  position: relative;
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px; }
-
-@media (min-width: 768px) {
-  #primary {
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 66.6666666667%;
-            flex: 0 0 66.6666666667%;
-    max-width: 66.6666666667%; } }
-
-@media (min-width: 768px) {
-  #secondary {
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 33.3333333333%;
-            flex: 0 0 33.3333333333%;
-    max-width: 33.3333333333%; } }
-
-body.sidebar-right #primary {
-  -webkit-box-ordinal-group: 2;
-  -webkit-order: 1;
-          order: 1; }
-
-body.sidebar-right #secondary {
-  -webkit-box-ordinal-group: 3;
-  -webkit-order: 2;
-          order: 2; }
-
-body.sidebar-left #primary {
-  -webkit-box-ordinal-group: 3;
-  -webkit-order: 2;
-          order: 2; }
-
-body.sidebar-left #secondary {
-  -webkit-box-ordinal-group: 2;
-  -webkit-order: 1;
-          order: 1; }
-
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
@@ -4762,99 +4722,20 @@ textarea, input {
   /* Adhere to container width. */ }
 
 /*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+.site-branding, .main-navigation {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px; }
+
+/*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
-/*--------------------------------------------------------------
-## Links
---------------------------------------------------------------*/
-a {
-  color: royalblue; }
-  a:visited {
-    color: purple; }
-  a:hover, a:focus, a:active {
-    color: midnightblue; }
-  a:focus {
-    outline: thin dotted; }
-  a:hover, a:active {
-    outline: 0; }
-
-/*--------------------------------------------------------------
-## Menus
---------------------------------------------------------------*/
-.main-navigation ul {
-  display: none;
-  list-style: none;
-  margin: 0;
-  padding-left: 0; }
-  .main-navigation ul ul {
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-    float: left;
-    position: absolute;
-    top: 100%;
-    left: -999em;
-    z-index: 99999; }
-    .main-navigation ul ul ul {
-      left: -999em;
-      top: 0; }
-    .main-navigation ul ul li:hover > ul,
-    .main-navigation ul ul li.focus > ul {
-      left: 100%; }
-    .main-navigation ul ul a {
-      width: 200px; }
-  .main-navigation ul li:hover > ul,
-  .main-navigation ul li.focus > ul {
-    left: auto;
-    background-color: #fff; }
-
-.main-navigation li {
-  float: left;
-  position: relative; }
-  .main-navigation li.current-menu-item {
-    background-color: #e5e5e5; }
-  .main-navigation li:hover, .main-navigation li.focus {
-    background-color: #e5e5e5; }
-    .main-navigation li:hover .sub-menu, .main-navigation li.focus .sub-menu {
-      display: block; }
-
-.main-navigation a {
-  text-decoration: none;
-  padding: 1rem; }
-
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-  display: block; }
-
-@media screen and (min-width: 37.5em) {
-  .menu-toggle {
-    display: none; }
-  .main-navigation ul {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: flex; } }
-
-.site-main .comment-navigation, .site-main
-.posts-navigation, .site-main
-.post-navigation {
-  margin: 0 0 1.5em;
-  overflow: hidden; }
-
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-  float: left;
-  width: 50%; }
-
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-  float: right;
-  text-align: right;
-  width: 50%; }
-
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/

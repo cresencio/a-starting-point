@@ -56,7 +56,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
-@import "layouts/layouts";
+//@import "layouts/layouts";
 
 /*--------------------------------------------------------------
 # Typography
@@ -69,6 +69,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "elements/elements";
 
 /*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+@import "components/components";
+
+/*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
 // @import "forms/forms";
@@ -76,7 +81,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
-@import "navigation/navigation";
+//@import "navigation/navigation";
 
 /*--------------------------------------------------------------
 # Accessibility
