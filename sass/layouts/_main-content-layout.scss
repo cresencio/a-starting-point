@@ -2,34 +2,34 @@
 	@include make-col-ready();
 }
 
-#primary{
-	@include media-breakpoint-up(md) {
-    @include make-col(8);
-  }
-}
-
-#secondary{
-	@include media-breakpoint-up(md) {
-    @include make-col(4);
-  }
-}
-
-body.sidebar-right{
-	#primary{
-	  order: 1;
-	}
-
-	#secondary{
-	  order: 2;
-	}
-}
-
-body.sidebar-left{
-	#primary{
-	  order: 2;
-	}
-
-	#secondary{
-	  order: 1;
-	}
-}
+// #primary{
+// 	@include media-breakpoint-up(md) {
+//     @include make-col(8);
+//   }
+// }
+//
+// #secondary{
+// 	@include media-breakpoint-up(md) {
+//     @include make-col(4);
+//   }
+// }
+//
+// body.sidebar-right{
+// 	#primary{
+// 	  order: 1;
+// 	}
+//
+// 	#secondary{
+// 	  order: 2;
+// 	}
+// }
+//
+// body.sidebar-left{
+// 	#primary{
+// 	  order: 2;
+// 	}
+//
+// 	#secondary{
+// 	  order: 1;
+// 	}
+// }
