@@ -20,7 +20,6 @@
 
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col">
 					<div class="site-info">
 						<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'asp-theme' ) ); ?>">
 							<?php
@@ -34,7 +33,6 @@
 							printf( esc_html__( 'Theme: %1$s by %2$s.', 'asp-theme' ), 'asp-theme', '<a href="https://cresenc.io">@cresencio</a>' );
 							?>
 					</div><!-- .site-info -->
-				</div>
 			</div>
 		</div>
 	</footer><!-- #colophon -->

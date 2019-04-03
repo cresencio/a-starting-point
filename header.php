@@ -26,14 +26,14 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'asp-theme' ); ?></a>
 
-	<header id="masthead" class="site-header" style="background: no-repeat center/80% url(<?php header_image(); ?>); background-size: cover;">
+	<header id="masthead" class="site-header">
 
 		<?php get_sidebar('header'); ?>
 
 		<div class="container-fluid">
 			<div class="row">
 				<!-- <div class="col"> -->
-					<div class="site-branding col-12">
+					<div class="site-branding">
 						<?php
 						the_custom_logo();
 						if ( is_front_page() && is_home() ) :
@@ -52,7 +52,7 @@
 						<?php endif; ?>
 					</div><!-- .site-branding -->
 
-					<nav id="site-navigation" class="main-navigation col p-0">
+					<nav id="site-navigation" class="main-navigation">
 						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'asp-theme' ); ?></button>
 						<?php
 
