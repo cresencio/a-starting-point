@@ -2,26 +2,23 @@
   @include make-col-ready();
 }
 
-.menu-toggle{
-  @include media-breakpoint-up(sm) {
-    display: none;
-  }
-}
+@include media-breakpoint-down(sm) {
 
-.main-navigation{
+    .main-navigation{
 
-  overflow: hidden;
+      overflow: hidden;
 
-  .nav-menu{
-    max-height: 0;
-    margin: 0;
-  }
+      .nav-menu{
+        max-height: 0;
+        margin: 0;
+      }
 
-  &.toggled{
-    .nav-menu{
-      height: auto;
-      max-height: 999px;
-      transition: max-height .8s ease-out;
+      &.toggled{
+        .nav-menu{
+          height: auto;
+          max-height: 999px;
+          transition: max-height .8s ease-out;
+        }
+      }
     }
-  }
 }
