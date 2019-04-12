@@ -1,0 +1,23 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{}
+
+h1,p{
+  &.site-title{
+    font-size: $h1-font-size;
+    font-weight: $headings-font-weight;
+    margin-bottom: $headings-margin-bottom;
+    line-height: $headings-line-height;
+    a{
+      color: inherit;
+    }
+  }
+}
+
+
+.entry-title{} // archives, tags, categories etc. use <h2>, single pages/posts use <h1>
+
+.widget-title{}
