@@ -1,4 +1,6 @@
 //variables overrides go above the first three imports
+// example usage below, add a color to the variable
+// $body-bg:
 
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
@@ -7,7 +9,7 @@
 @import "../node_modules/bootstrap/scss/reboot";
 // @import "../node_modules/bootstrap/scss/images";
 // @import "../node_modules/bootstrap/scss/code";
-// @import "../node_modules/bootstrap/scss/grid";
+@import "../node_modules/bootstrap/scss/grid";
 // @import "../node_modules/bootstrap/scss/tables";
 // @import "../node_modules/bootstrap/scss/forms";
 // @import "../node_modules/bootstrap/scss/buttons";
@@ -34,5 +36,5 @@
 // @import "../node_modules/bootstrap/scss/popover";
 // @import "../node_modules/bootstrap/scss/carousel";
 // @import "../node_modules/bootstrap/scss/spinners";
-// @import "../node_modules/bootstrap/scss/utilities";
-// @import "../node_modules/bootstrap/scss/print";
+@import "../node_modules/bootstrap/scss/utilities";
+@import "../node_modules/bootstrap/scss/print";
