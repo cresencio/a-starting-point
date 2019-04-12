@@ -2,7 +2,9 @@
 // More info: https://developer.wordpress.org/reference/functions/wp_page_menu/
 
 .page_item{
-  @extend .nav-item;
+
+  display: block;
+  width: 100%;
 
   a{
     @extend .nav-link;
