@@ -33,6 +33,8 @@ h1,p{
 }
 
 
-.entry-title{} // archives, tags, categories etc. use <h2>, single pages/posts use <h1>
+.entry-title{
+  text-transform: uppercase;
+} // archives, tags, categories etc. use <h2>, single pages/posts use <h1>
 
 .widget-title{} // <h2>
