@@ -1,0 +1,21 @@
+a {
+	color: $link-color;
+  text-decoration: $link-decoration;
+
+	&:hover,
+	&:focus,
+  &:visited,
+	&:active {
+		color: $link-hover-color;
+	}
+
+	&:focus {
+		outline: thin dotted;
+	}
+
+	&:hover,
+	&:active {
+		outline: 0;
+	}
+
+}

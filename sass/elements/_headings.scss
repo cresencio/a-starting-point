@@ -5,6 +5,8 @@ h4,
 h5,
 h6{}
 
+//site title in the header, front-page and home page use <h1>, all others a <p>
+
 h1,p{
   &.site-title{
     font-size: $h1-font-size;
@@ -20,4 +22,4 @@ h1,p{
 
 .entry-title{} // archives, tags, categories etc. use <h2>, single pages/posts use <h1>
 
-.widget-title{}
+.widget-title{} // <h2>
