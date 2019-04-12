@@ -1,4 +1,8 @@
 .main-navigation {
+	clear: both;
+	display: block;
+	float: left;
+	width: 100%;
 
 	ul {
 		display: none;
@@ -42,7 +46,6 @@
 		li:hover > ul,
 		li.focus > ul {
 			left: auto;
-			background-color: $white;
 		}
 	}
 
@@ -50,28 +53,14 @@
 		float: left;
 		position: relative;
 
-		&.current-menu-item{
-			background-color: #e5e5e5;
-		}
-
-		&:hover,
-		&.focus{
-			background-color: #e5e5e5;
-
-			.sub-menu{
-				display: block;
-			}
-		}
-
 		&:hover > a,
 		&.focus > a {
 		}
 	}
 
 	a {
-		//display: block;
+		display: block;
 		text-decoration: none;
-		padding: $spacer;
 	}
 
 	.current_page_item > a,
@@ -91,8 +80,8 @@
 	.menu-toggle {
 		display: none;
 	}
-	.main-navigation  ul {
-		display: flex;
+	.main-navigation ul {
+		display: block;
 	}
 }
 
