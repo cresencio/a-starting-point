@@ -5,7 +5,6 @@
 
 // mobile menu toggle
 .menu-toggle{
-
   @include button-variant(theme-color('light'), theme-color('dark'), theme-color('dark'));
   @include button-size($btn-padding-y, $btn-padding-x, inherit, inherit, 1rem);
 }
