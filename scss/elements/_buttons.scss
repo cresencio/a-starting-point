@@ -4,12 +4,12 @@
 // button-size($padding-y, $padding-x, $font-size, $line-height, $border-radius)
 
 // mobile menu toggle
-.menu-toggle{
+.menu-toggle, .submit{
   @include button-variant(theme-color('light'), theme-color('dark'), theme-color('dark'));
   @include button-size($btn-padding-y, $btn-padding-x, inherit, inherit, 1rem);
 }
 
 .search-submit{
   @include button-variant(theme-color('primary'), theme-color('primary'), theme-color('primary'));
-  @include button-size(0, 0, inherit, inherit, 0);
+  @include button-size($btn-padding-y, $btn-padding-x, inherit, inherit, 0);
 }
