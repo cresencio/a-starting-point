@@ -9,7 +9,13 @@
   @include button-size($btn-padding-y, $btn-padding-x, inherit, inherit, 1rem);
 }
 
-.search-submit{
+.search-submit, .more-link{
   @include button-variant(theme-color('primary'), theme-color('primary'), theme-color('primary'));
   @include button-size($btn-padding-y, $btn-padding-x, inherit, inherit, 0);
+}
+
+.more-link{
+  &:visited{
+    color: $white;
+  }
 }

@@ -33,12 +33,6 @@
 }
 
 #primary-menu{
-  .children{
-    list-style: none;
-  }
-}
-
-#primary-menu{
   li:hover{
     background-color: $light;
   }
@@ -68,9 +62,11 @@
 
   }
 
-  .children{
-    display: none;
-    padding-left: 0;
+  .main-navigation{
+    .children{
+      display: none;
+      padding-left: 0;
+    }
   }
 
   .main-navigation{

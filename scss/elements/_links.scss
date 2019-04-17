@@ -1,4 +1,4 @@
-a {
+a:not(.wp-block-button__link) {
 	color: $link-color;
   text-decoration: $link-decoration;
 
