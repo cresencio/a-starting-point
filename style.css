@@ -5707,7 +5707,7 @@ table {
 /*--------------------------------------------------------------
 # Blocks
 --------------------------------------------------------------*/
-.wp-block-cover.asp-custom .wp-block-cover-text {
+.wp-block-cover .wp-block-cover-text {
   color: inherit;
 }
 
