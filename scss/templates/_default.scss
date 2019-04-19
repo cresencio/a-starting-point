@@ -7,7 +7,7 @@
     @include make-col(8, $grid-columns);
   }
 
-  .widget-area{
+  aside.widget-area{
     @include make-col(4, $grid-columns);
   }
 }
