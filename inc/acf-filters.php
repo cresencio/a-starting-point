@@ -17,7 +17,6 @@ function acf_widget_custom_class( $params ) {
 	$widget_id = $params[0]['widget_id'];
 	// get acf value
 	$custom_css_class_value = clean_acf_text_fields(get_field('asp_custom_widget_class', 'widget_' . $widget_id));
-	$custom_css_class_value .= ' asp-theme-custom-class';
 
 	if( $custom_css_class_value ) {
 		$params[0]['before_widget'] = str_replace( 'asp-theme-acf', esc_html( $custom_css_class_value ), $params[0]['before_widget'] );
