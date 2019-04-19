@@ -3182,7 +3182,7 @@ button.bg-dark:focus {
   height: 100vh !important;
 }
 
-.stretched-link::after {
+.stretched-link::after, .widget_archive ul li a::after, .widget_categories .cat-item a::after, .widget_meta ul li a::after, .widget_recent_entries li a::after {
   position: absolute;
   top: 0;
   right: 0;
@@ -5707,10 +5707,6 @@ table {
 /*--------------------------------------------------------------
 # Blocks
 --------------------------------------------------------------*/
-.wp-block-cover .wp-block-cover-text {
-  color: inherit;
-}
-
 .wp-block-pullquote {
   border-top: 10px solid;
   border-bottom: 10px solid;
@@ -5728,6 +5724,184 @@ table {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
+}
+
+.widget-title {
+  font-size: 1.5rem;
+}
+
+.widget_archive ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.widget_archive ul li {
+  padding: 0.5rem 1rem;
+  position: relative;
+}
+
+.widget_archive ul li:hover {
+  background-color: #f8f9fa;
+}
+
+.widget_calendar #today {
+  background: #007bff;
+  color: #fff;
+}
+
+.widget_calendar table {
+  text-align: center;
+}
+
+.widget_categories ul {
+  list-style: none;
+}
+
+.widget_categories ul.children .cat-item {
+  padding-bottom: 0;
+}
+
+.widget_categories ul.children a {
+  border-left: 1px solid #343a40;
+}
+
+.widget_categories .cat-item {
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.widget_categories .cat-item a {
+  padding: 0 0.5rem;
+}
+
+.widget_pages a:hover {
+  background-color: #f8f9fa;
+}
+
+.widget_meta ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.widget_meta ul li {
+  position: relative;
+  padding: 0.5rem;
+}
+
+.widget_meta ul li:hover {
+  background-color: #f8f9fa;
+}
+
+.widget_recent_comments #recentcomments {
+  list-style: none;
+  padding-left: 0;
+}
+
+.widget_recent_comments .recentcomments {
+  padding: 0.5rem;
+}
+
+.widget_recent_comments .recentcomments:hover {
+  background-color: #f8f9fa;
+}
+
+.widget_recent_entries ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.widget_recent_entries li {
+  padding: 0.5rem;
+  position: relative;
+}
+
+.widget_recent_entries li:hover {
+  background-color: #f8f9fa;
+}
+
+.widget_rss ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.widget_rss ul li {
+  margin-bottom: 1rem;
+}
+
+.widget_rss ul .rsswidget {
+  font-size: 1rem;
+  font-weight: 500;
+  display: block;
+}
+
+.widget_rss ul .rss-date {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.widget_rss ul cite {
+  display: block;
+  text-align: right;
+  border-bottom: 1px solid #f8f9fa;
+  padding-bottom: 0.5rem;
+}
+
+.widget_nav_menu .sub-menu {
+  padding-left: 1rem;
+  list-style: none;
+}
+
+.widget_nav_menu .nav-link:hover, .widget_nav_menu .page_item a:hover, .page_item .widget_nav_menu a:hover {
+  background-color: #f8f9fa;
+}
+
+.widget_nav_menu .page_item {
+  width: auto;
+}
+
+aside.widget-area .widget_nav_menu .nav {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  #header-widgets .widget_nav_menu .sub-menu {
+    display: none;
+    padding-left: 0;
+  }
+  #header-widgets .widget_nav_menu ul ul {
+    background-color: #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    float: left;
+    position: absolute;
+    top: 100%;
+    left: -999em;
+    z-index: 99999;
+  }
+  #header-widgets .widget_nav_menu ul ul ul {
+    left: -999em;
+    top: 0;
+  }
+  #header-widgets .widget_nav_menu ul ul li:hover > ul,
+  #header-widgets .widget_nav_menu ul ul li.focus > ul {
+    left: 100%;
+  }
+  #header-widgets .widget_nav_menu ul ul a {
+    width: 200px;
+  }
+  #header-widgets .widget_nav_menu ul li:hover > ul,
+  #header-widgets .widget_nav_menu ul li.focus > ul {
+    left: auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -5903,12 +6077,19 @@ table {
             flex: 0 0 66.6666666667%;
     max-width: 66.6666666667%;
   }
-  .widget-area {
+  aside.widget-area {
     -webkit-box-flex: 0;
     -webkit-flex: 0 0 33.3333333333%;
             flex: 0 0 33.3333333333%;
     max-width: 33.3333333333%;
   }
+}
+
+body.no-sidebar .content-area {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 100%;
+          flex: 0 0 100%;
+  max-width: 100%;
 }
 
 .page-template-page-landing .content-area {
