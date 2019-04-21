@@ -14,7 +14,7 @@
   @include button-size($btn-padding-y, $btn-padding-x, inherit, inherit, 0);
 }
 
-.more-link{
+a.more-link{
   &:visited{
     color: $white;
   }

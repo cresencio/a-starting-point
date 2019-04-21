@@ -4,7 +4,6 @@ a:not(.wp-block-button__link) {
 
 	&:hover,
 	&:focus,
-  &:visited,
 	&:active {
 		color: $link-hover-color;
 	}

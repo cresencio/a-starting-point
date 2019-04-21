@@ -5378,7 +5378,7 @@ a:not(.wp-block-button__link) {
   text-decoration: none;
 }
 
-a:not(.wp-block-button__link):hover, a:not(.wp-block-button__link):focus, a:not(.wp-block-button__link):visited, a:not(.wp-block-button__link):active {
+a:not(.wp-block-button__link):hover, a:not(.wp-block-button__link):focus, a:not(.wp-block-button__link):active {
   color: #0056b3;
 }
 
@@ -5515,7 +5515,7 @@ ul, ol {
   box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
 }
 
-.more-link:visited {
+a.more-link:visited {
   color: #fff;
 }
 
