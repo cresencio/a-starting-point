@@ -5373,21 +5373,25 @@ input, textarea, select {
   display: block;
 }
 
-a:not(.wp-block-button__link) {
+a {
   color: #007bff;
   text-decoration: none;
 }
 
-a:not(.wp-block-button__link):hover, a:not(.wp-block-button__link):focus, a:not(.wp-block-button__link):active {
+a:hover, a:focus, a:active {
   color: #0056b3;
 }
 
-a:not(.wp-block-button__link):focus {
+a:focus {
   outline: thin dotted;
 }
 
-a:not(.wp-block-button__link):hover, a:not(.wp-block-button__link):active {
+a:hover, a:active {
   outline: 0;
+}
+
+a:visited {
+  text-decoration: underline;
 }
 
 .cat-links {

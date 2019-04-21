@@ -1,4 +1,4 @@
-a:not(.wp-block-button__link) {
+a{
 	color: $link-color;
   text-decoration: $link-decoration;
 
@@ -15,6 +15,10 @@ a:not(.wp-block-button__link) {
 	&:hover,
 	&:active {
 		outline: 0;
+	}
+
+	&:visited {
+		text-decoration: underline;
 	}
 
 }
