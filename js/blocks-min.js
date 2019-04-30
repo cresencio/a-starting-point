@@ -1,1 +1,0 @@
-function setBlockCustomClassName(s,l){return"core/asp"===l?"asp-block":s+" asp-block"}var $css_class_field=acf.findField("field_5c941c70ebf67");$css_class_field.val()&&wp.hooks.addFilter("blocks.getBlockDefaultClassName","asp-theme-blocks",setBlockCustomClassName);
