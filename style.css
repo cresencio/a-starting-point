@@ -5799,6 +5799,7 @@ table {
 .widget_recent_comments #recentcomments {
   list-style: none;
   padding-left: 0;
+  word-break: break-all;
 }
 
 .widget_recent_comments .recentcomments {
