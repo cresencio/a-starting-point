@@ -219,3 +219,15 @@ function add_bs_nav_link_class_to_menu_links($atts) {
   return $atts;
 }
 add_filter( 'nav_menu_link_attributes', 'add_bs_nav_link_class_to_menu_links');
+
+// Add wp_body_open() action
+
+if ( ! function_exists( 'wp_body_open' ) ) {
+
+	function wp_body_open() {
+
+		do_action( 'wp_body_open' );
+
+	}
+
+}
