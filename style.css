@@ -7023,6 +7023,9 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #dee2e6; } }
 
 /*--------------------------------------------------------------
+# Theme Settings
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
 h1 {
@@ -7321,7 +7324,7 @@ table {
   list-style: none;
   padding-left: 0; }
   .widget_archive ul li {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem;
     position: relative; }
     .widget_archive ul li:hover {
       background-color: #f8f9fa; }
@@ -7334,6 +7337,7 @@ table {
   text-align: center; }
 
 .widget_categories ul {
+  padding: 0;
   list-style: none; }
   .widget_categories ul.children .cat-item {
     padding-bottom: 0; }
@@ -7344,7 +7348,7 @@ table {
   position: relative;
   padding: 0.5rem 0; }
   .widget_categories .cat-item a {
-    padding: 0 0.5rem; }
+    padding: 0.5rem; }
 
 .widget_pages a:hover {
   background-color: #f8f9fa; }
@@ -7438,6 +7442,18 @@ aside.widget-area .widget_nav_menu .nav {
 /*--------------------------------------------------------------
 # Sections
 --------------------------------------------------------------*/
+.site-header {
+  background-color: #ced4da;
+  color: #212529; }
+
+#masthead {
+  margin-bottom: 1rem; }
+
+#site-navigation {
+  background-color: #e9ecef; }
+  #site-navigation a {
+    color: #212529; }
+
 .site-branding {
   position: relative;
   width: 100%;
@@ -7545,11 +7561,19 @@ aside.widget-area .widget_nav_menu .nav {
 .comment .children .comment {
   border-top: 1px solid #343a40; }
 
+.site-footer {
+  background-color: #212529;
+  color: #e9ecef; }
+  .site-footer a {
+    color: #e9ecef; }
+
 .site-info {
   position: relative;
   width: 100%;
   padding-right: 15px;
-  padding-left: 15px; }
+  padding-left: 15px;
+  text-align: center;
+  padding: 1rem; }
 
 /*--------------------------------------------------------------
 # Layouts
@@ -7569,6 +7593,9 @@ body.no-sidebar .content-area {
 .page-template-page-landing .content-area {
   flex: 0 0 100%;
   max-width: 100%; }
+
+#page {
+  margin: auto; }
 
 /*--------------------------------------------------------------
 # Posts

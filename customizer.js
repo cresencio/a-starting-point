@@ -39,4 +39,18 @@
 			}
 		} );
 	} );
+
+	// main content background color
+	wp.customize( 'asp_main_content_background_color', function( value ) {
+		value.bind( function( newval ) {
+			$( '#page' ).css( 'background-color', newval );
+		} );
+	} );
+
+	// Site title and description.
+	wp.customize( 'asp_content_max_width', function( value ) {
+		value.bind( function( to ) {
+			$( '#page' ).css( 'max-width', to );
+		} );
+	} );
 } )( jQuery );

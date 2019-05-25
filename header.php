@@ -31,7 +31,7 @@
 
 		<div class="container-fluid">
 			<div class="row">
-				<!-- <div class="col"> -->
+
 					<div class="site-branding">
 						<?php
 
@@ -53,7 +53,7 @@
 
 						if ( $asp_theme_description || is_customize_preview() ) : ?>
 
-							<p class="site-description"><?php echo esc_html( $asp_theme_description ); /* WPCS: xss ok. */ ?></p>
+<p class="site-description"><?php echo $asp_theme_description; /* WPCS: xss ok. */ ?></p>
 
 						<?php endif; ?>
 
@@ -73,7 +73,8 @@
 
 					</nav><!-- #site-navigation -->
 
-				<!-- </div> -->
+					<?php the_header_image_tag(); ?>
+
 			</div>
 		</div>
 	</header><!-- #masthead -->

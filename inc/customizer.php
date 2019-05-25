@@ -26,6 +26,48 @@ function asp_theme_customize_register( $wp_customize ) {
 		) );
 	}
 
+	$wp_customize->add_setting( 'asp_main_content_background_color' , array(
+		'default'     => 'FFFFFF',
+		'transport'   => 'refresh',
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'asp_main_content_background_color', array(
+		'label'        => 'Main Content Background Color',
+		'section'    => 'colors',
+		'settings'   => 'asp_main_content_background_color',
+	)));
+
+	// add a section, this will not show in the panel until a control is added to it.
+	$wp_customize->add_section( 'asp_content_max_width' , array(
+		'title'      => 'Site Layout',
+		'priority'   => 30
+	));
+
+	// settings go into controls, so set this up before the control
+	$wp_customize->add_setting( 'content_max_width' , array(
+		'default'     				=> 'none',
+		'transport'   				=> 'refresh',
+		'type'			  		=> 'theme_mod',
+		'sanitize_callback' => 'asp_sanitize_content_max_width'
+		));
+
+	function asp_sanitize_content_max_width( $input, $setting ){
+		//input must be a slug: lowercase alphanumeric characters, dashes and underscores are allowed only
+		$input = sanitize_key($input);
+		//return input if valid or return default option
+		return ( intval($input) ? $input.'px' : $setting->default );
+	}
+	// create the control
+	$wp_customize->add_control(
+		'content_max_width',
+			array(
+				'label'       => 'Content Max Width',
+				'section'     => 'asp_content_max_width',
+				'settings'    => 'content_max_width',
+				'type'        => 'number',
+				'description' => __( 'Modifies the max width of the website\'s content (pixels).', 'asp' ),
+			)
+	);
+
 }
 add_action( 'customize_register', 'asp_theme_customize_register' );
 
@@ -51,6 +93,23 @@ function asp_theme_customize_partial_blogdescription() {
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function asp_theme_customize_preview_js() {
-	wp_enqueue_script( 'asp-theme-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
+	wp_enqueue_script( 'asp-theme-customizer', get_template_directory_uri() . '/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
 add_action( 'customize_preview_init', 'asp_theme_customize_preview_js' );
+
+// hook the styles onto the head
+
+add_action( 'wp_head', 'asp_customizer_css');
+function asp_customizer_css(){
+		?>
+		<style type="text/css">
+			#page { 
+				background-color: <?php echo get_theme_mod('asp_main_content_background_color', 'FFFFFF'); ?>; 
+				max-width: <?php echo get_theme_mod('content_max_width', 'none'); ?>;
+			}
+				
+		</style>
+
+
+		<?php
+}
