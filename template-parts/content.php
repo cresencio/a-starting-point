@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package ASP_Theme
+ * @package a_starting_point
  */
 
 ?>
@@ -22,21 +22,21 @@
 			?>
 			<div class="entry-meta">
 				<?php
-				asp_theme_posted_on();
-				asp_theme_posted_by();
+				a_starting_point_posted_on();
+				a_starting_point_posted_by();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php asp_theme_post_thumbnail(); ?>
+	<?php a_starting_point_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
 		the_content( sprintf(
 			wp_kses(
 				/* translators: %s: Name of current post. Only visible to screen readers */
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'asp-theme' ),
+				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'a-starting-point' ),
 				array(
 					'span' => array(
 						'class' => array(),
@@ -47,13 +47,13 @@
 		) );
 
 		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'asp-theme' ),
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'a-starting-point' ),
 			'after'  => '</div>',
 		) );
 		?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php asp_theme_entry_footer(); ?>
+		<?php a_starting_point_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -1,5 +1,5 @@
 /*
-Theme Name: ASP Theme
+Theme Name: A Starting Point
 Theme URI: https://asp-theme.dev
 Author: @Cresencio
 Author URI: https://cresenc.io
@@ -7,12 +7,12 @@ Description: A starter theme for WordPress development.
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
-Text Domain: asp-theme
+Text Domain: a-starting-point
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-ASP Theme is based on Underscores https://underscores.me/ and modified by @Cresencio, (C) 2012-2017 Automattic, Inc.
+A Starting Point is a theme is based on Underscores https://underscores.me/ and modified by @Cresencio, (C) 2012-2017 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Modifications:
@@ -22,7 +22,7 @@ Modifications:
 - integration with Bootstrap 4
 - restructured stylesheets (SCSS)
 
-ASP Theme also uses Bootstrap:
+ASP also uses Bootstrap:
 Bootstrap v4.3.1 (https://getbootstrap.com/)
 Copyright 2011-2019 The Bootstrap Authors
 Copyright 2011-2019 Twitter, Inc.
@@ -78,6 +78,14 @@ Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 /* Do not show the outline on the skip link target. */
 #content[tabindex="-1"]:focus {
   outline: 0; }
+
+/*--------------------------------------------------------------
+# Utilities
+--------------------------------------------------------------*/
+/* for WordPress formatting classes */
+.aligncenter {
+  margin-left: auto;
+  margin-right: auto; }
 
 /*--------------------------------------------------------------
 # Bootstrap
@@ -7561,6 +7569,10 @@ aside.widget-area .widget_nav_menu .nav {
 .comment .children .comment {
   border-top: 1px solid #343a40; }
 
+.bypostauthor {
+  background-color: #f8f9fa;
+  padding: 1rem; }
+
 .site-footer {
   background-color: #212529;
   color: #e9ecef; }
@@ -7589,6 +7601,9 @@ aside.widget-area .widget_nav_menu .nav {
 body.no-sidebar .content-area {
   flex: 0 0 100%;
   max-width: 100%; }
+
+.error404 #content {
+  padding-bottom: 1rem; }
 
 .page-template-page-landing .content-area {
   flex: 0 0 100%;

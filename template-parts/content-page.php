@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package ASP_Theme
+ * @package a_starting_point
  */
 
 ?>
@@ -14,14 +14,14 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php asp_theme_post_thumbnail(); ?>
+	<?php a_starting_point_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
 		the_content();
 
 		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'asp-theme' ),
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'a-starting-point' ),
 			'after'  => '</div>',
 		) );
 		?>
@@ -34,7 +34,7 @@
 				sprintf(
 					wp_kses(
 						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Edit <span class="screen-reader-text">%s</span>', 'asp-theme' ),
+						__( 'Edit <span class="screen-reader-text">%s</span>', 'a-starting-point' ),
 						array(
 							'span' => array(
 								'class' => array(),

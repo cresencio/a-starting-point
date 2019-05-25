@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package ASP_Theme
+ * @package a_starting_point
  */
 
 ?>
@@ -23,7 +23,7 @@
 	<?php wp_body_open(); ?>
 <div id="page" class="site">
 
-	<a class="skip-link screen-reader-text sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'asp-theme' ); ?></a>
+	<a class="skip-link screen-reader-text sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'a-starting-point' ); ?></a>
 
 	<header id="masthead" class="site-header">
 
@@ -49,11 +49,11 @@
 							<?php
 						endif;
 
-						$asp_theme_description = get_bloginfo( 'description', 'display' );
+						$a_starting_point_description = get_bloginfo( 'description', 'display' );
 
-						if ( $asp_theme_description || is_customize_preview() ) : ?>
+						if ( $a_starting_point_description || is_customize_preview() ) : ?>
 
-<p class="site-description"><?php echo $asp_theme_description; /* WPCS: xss ok. */ ?></p>
+<p class="site-description"><?php echo $a_starting_point_description; /* WPCS: xss ok. */ ?></p>
 
 						<?php endif; ?>
 
@@ -61,7 +61,7 @@
 
 					<nav id="site-navigation" class="main-navigation">
 
-						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'menu toggle', 'asp-theme' ); ?></button>
+						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'menu toggle', 'a-starting-point' ); ?></button>
 						<?php
 
 						wp_nav_menu( array(
