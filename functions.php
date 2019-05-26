@@ -139,9 +139,13 @@ add_action( 'widgets_init', 'a_starting_point_widgets_init' );
  */
 function a_starting_point_scripts() {
 	
-	wp_enqueue_style( 'style', get_stylesheet_uri() );
-	wp_enqueue_script( 'header_js', get_template_directory_uri() . '/js/header-bundle.js', null, 1.0, false );
-	wp_enqueue_script( 'footer_js', get_template_directory_uri() . '/js/footer-bundle.js', null, 1.0, true );
+	wp_enqueue_style( 'a_starting_point_style', get_stylesheet_uri() );
+	wp_enqueue_script( 'jquery');
+	wp_enqueue_script( 'a_starting_point_popper', get_template_directory_uri() . '/js/popper.js', null, 1.15, true );
+	wp_enqueue_script( 'a_starting_point_bootstrap', get_template_directory_uri() . '/js/bootstrap.js', null, 4.3, true );
+	wp_enqueue_script( 'a_starting_point_navigation', get_template_directory_uri() . '/js/navigation.js', null, 1.0, true );
+	wp_enqueue_script( 'a_starting_point_-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -197,27 +201,27 @@ if( class_exists('acf') ) {
 
 // add the BS nav class to all menus
 
-function add_bs_nav_class_to_menus( $args )
+function a_starting_point_add_bs_nav_class_to_menus( $args )
 {
 	$args['menu_class'] .= ' nav';
 	return $args;
 }
 
-add_filter( 'wp_nav_menu_args', 'add_bs_nav_class_to_menus' );
+add_filter( 'wp_nav_menu_args', 'a_starting_point_add_bs_nav_class_to_menus' );
 
 // add BS nav-item class to all li tags
-function add_bs_link_item_class_to_list_items($classes, $item, $args) {
+function a_starting_point_add_bs_link_item_class_to_list_items($classes, $item, $args) {
   $classes[] = 'nav-item';
   return $classes;
 }
-add_filter('nav_menu_css_class', 'add_bs_link_item_class_to_list_items', 1, 3);
+add_filter('nav_menu_css_class', 'a_starting_point_add_bs_link_item_class_to_list_items', 1, 3);
 
 // add the BS nav-link class to all menu links
-function add_bs_nav_link_class_to_menu_links($atts) {
+function a_starting_point_add_bs_nav_link_class_to_menu_links($atts) {
   $atts['class'] = "nav-link";
   return $atts;
 }
-add_filter( 'nav_menu_link_attributes', 'add_bs_nav_link_class_to_menu_links');
+add_filter( 'nav_menu_link_attributes', 'a_starting_point_add_bs_nav_link_class_to_menu_links');
 
 if ( ! function_exists( 'wp_body_open' ) ) :
 	/**
