@@ -26,6 +26,9 @@ Yes, this theme supports the following plugins:
 
 == Changelog ==
 
+= 1.2.0 =
+* add theme URI
+
 = 1.1.0 =
 * don't bundle js
 * prefix various functions and output
