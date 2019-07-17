@@ -1,6 +1,6 @@
 <?php
 /**
- * ASP Theme functions and definitions
+ * A Starting Point functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -19,7 +19,7 @@ if ( ! function_exists( 'a_starting_point_setup' ) ) :
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on ASP Theme, use a find and replace
+		 * If you're building a theme based on A Starting Point, use a find and replace
 		 * to change 'a-starting-point' to the name of your theme in all the template files.
 		 */
 		load_theme_textdomain( 'a-starting-point', get_template_directory() . '/languages' );
@@ -108,7 +108,7 @@ function a_starting_point_widgets_init() {
 		'name'          => esc_html__( 'Header', 'a-starting-point' ),
 		'id'            => 'sidebar-header',
 		'description'   => esc_html__( 'Add header widgets here.', 'a-starting-point' ),
-		'before_widget' => '<section id="%1$s" class="widget asp-theme-acf %2$s">',
+		'before_widget' => '<section id="%1$s" class="widget a-starting-point-acf %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
@@ -117,7 +117,7 @@ function a_starting_point_widgets_init() {
 		'name'          => esc_html__( 'Footer', 'a-starting-point' ),
 		'id'            => 'sidebar-footer',
 		'description'   => esc_html__( 'Add footer widgets here.', 'a-starting-point' ),
-		'before_widget' => '<section id="%1$s" class="widget asp-theme-acf %2$s">',
+		'before_widget' => '<section id="%1$s" class="widget a-starting-point-acf %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
@@ -126,7 +126,7 @@ function a_starting_point_widgets_init() {
 		'name'          => esc_html__( 'Sidebar', 'a-starting-point' ),
 		'id'            => 'sidebar-1',
 		'description'   => esc_html__( 'Add widgets here.', 'a-starting-point' ),
-		'before_widget' => '<section id="%1$s" class="widget asp-theme-acf %2$s">',
+		'before_widget' => '<section id="%1$s" class="widget a-starting-point-acf %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
@@ -140,12 +140,10 @@ add_action( 'widgets_init', 'a_starting_point_widgets_init' );
 function a_starting_point_scripts() {
 	
 	wp_enqueue_style( 'a_starting_point_style', get_stylesheet_uri() );
-	wp_enqueue_script( 'jquery');
 	wp_enqueue_script( 'a_starting_point_popper', get_template_directory_uri() . '/js/popper.js', null, 1.15, true );
-	wp_enqueue_script( 'a_starting_point_bootstrap', get_template_directory_uri() . '/js/bootstrap.js', null, 4.3, true );
-	wp_enqueue_script( 'a_starting_point_navigation', get_template_directory_uri() . '/js/navigation.js', null, 1.0, true );
+	wp_enqueue_script( 'a_starting_point_bootstrap', get_template_directory_uri() . '/js/bootstrap.js', array('jquery'), null, 4.3, true );
+	wp_enqueue_script( 'a_starting_point_navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), null, 1.0, true );
 	wp_enqueue_script( 'a_starting_point_-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

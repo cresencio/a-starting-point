@@ -1,6 +1,6 @@
 <?php
 /**
- * ASP Theme Theme Customizer
+ * A Starting Point Customizer
  *
  * @package a_starting_point
  */
@@ -26,34 +26,21 @@ function a_starting_point_customize_register( $wp_customize ) {
 		) );
 	}
 
-	$wp_customize->add_setting( 'asp_main_content_background_color' , array(
+	$wp_customize->add_setting( 'a_starting_point_main_content_background_color' , array(
 		'default'     => 'FFFFFF',
 		'transport'   => 'refresh',
-		'sanitize_callback' => 'a_starting_point_sanitize_main_content_background_color'
+		'sanitize_callback' => 'sanitize_hex_color'
 	));
 
-	//https://developer.wordpress.org/reference/functions/sanitize_hex_color/
-
-	function a_starting_point_sanitize_main_content_background_color($input){
-		if ( '' === $input ) {
-			return '';
-		}
-	 
-		// 3 or 6 hex digits, or the empty string.
-		if ( preg_match( '|^#([A-Fa-f0-9]{3}){1,2}$|', $input ) ) {
-			return $input;
-		}
-	}
-
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'asp_main_content_background_color', array(
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'a_starting_point_main_content_background_color', array(
 		'label'        => 'Main Content Background Color',
 		'section'    => 'colors',
-		'settings'   => 'asp_main_content_background_color',
+		'settings'   => 'a_starting_point_main_content_background_color',
 	)));
 
 	// add a section, this will not show in the panel until a control is added to it.
-	$wp_customize->add_section( 'asp_content_max_width' , array(
-		'title'      => 'Site Layout',
+	$wp_customize->add_section( 'a_starting_point_content_max_width' , array(
+		'title'      => 'Website Layout',
 		'priority'   => 30
 	));
 
@@ -76,10 +63,10 @@ function a_starting_point_customize_register( $wp_customize ) {
 		'content_max_width',
 			array(
 				'label'       => 'Content Max Width',
-				'section'     => 'asp_content_max_width',
+				'section'     => 'a_starting_point_content_max_width',
 				'settings'    => 'content_max_width',
 				'type'        => 'number',
-				'description' => __( 'Modifies the max width of the website\'s content (pixels).', 'a-starting-point' ),
+				'description' => __( 'Modifies the max width of the website\'s content.', 'a-starting-point' ),
 			)
 	);
 
@@ -108,18 +95,18 @@ function a_starting_point_customize_partial_blogdescription() {
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function a_starting_point_customize_preview_js() {
-	wp_enqueue_script( 'asp-theme-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
+	wp_enqueue_script( 'a-starting-point-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
 add_action( 'customize_preview_init', 'a_starting_point_customize_preview_js' );
 
 // hook the styles onto the head
 
-add_action( 'wp_head', 'asp_customizer_css');
-function asp_customizer_css(){
+add_action( 'wp_head', 'a_starting_point_customizer_css');
+function a_starting_point_customizer_css(){
 		?>
 		<style type="text/css">
 			#page { 
-				background-color: <?php echo esc_html(get_theme_mod('asp_main_content_background_color', 'FFFFFF')); ?>; 
+				background-color: <?php echo esc_html(get_theme_mod('a_starting_point_main_content_background_color', 'FFFFFF')); ?>; 
 				max-width: <?php echo esc_html(get_theme_mod('content_max_width', 'none')); ?>;
 			}
 				

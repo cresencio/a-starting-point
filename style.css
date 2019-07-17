@@ -4,7 +4,7 @@ Theme URI: https://github.com/cresencio/asp-theme
 Author: @Cresencio
 Author URI: https://cresenc.io
 Description: A starter theme for WordPress development.
-Version: 1.4.0
+Version: 1.5.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: a-starting-point
@@ -22,7 +22,7 @@ Modifications:
 - integration with Bootstrap 4
 - restructured stylesheets (SCSS)
 
-ASP also uses Bootstrap:
+A Starting Point also uses Bootstrap:
 Bootstrap v4.3.1 (https://getbootstrap.com/)
 Copyright 2011-2019 The Bootstrap Authors
 Copyright 2011-2019 Twitter, Inc.
@@ -7054,12 +7054,12 @@ h5 {
 h6 {
   font-size: 1rem; }
 
-h1.site-title, p.site-title {
+.site-title {
   font-size: 2.5rem;
   font-weight: 500;
   margin-bottom: 0.5rem;
   line-height: 1.2; }
-  h1.site-title a, p.site-title a {
+  .site-title a {
     color: inherit; }
 
 .entry-title {
@@ -7075,7 +7075,8 @@ blockquote {
   padding-left: 1rem; }
 
 input, textarea, select {
-  display: block; }
+  display: block;
+  max-width: 100%; }
 
 a {
   color: #007bff;
@@ -7522,7 +7523,8 @@ aside.widget-area .widget_nav_menu .nav {
       top: 0; }
     .main-navigation ul ul li:hover > ul,
     .main-navigation ul ul li.focus > ul {
-      left: 100%; }
+      left: 100%;
+      top: auto; }
     .main-navigation ul ul a {
       width: 200px; }
   .main-navigation ul li:hover > ul,
@@ -7542,6 +7544,9 @@ aside.widget-area .widget_nav_menu .nav {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px; }
+  #secondary .widget {
+    margin-top: 25px;
+    margin-bottom: 25px; }
 
 .entry-header {
   margin-bottom: 1rem; }
@@ -7552,6 +7557,15 @@ aside.widget-area .widget_nav_menu .nav {
 
 .entry-footer {
   clear: both; }
+
+.hfeed .post {
+  margin-top: 40px;
+  margin-bottom: 40px; }
+
+.hfeed .entry-footer {
+  border-bottom: 3px solid #e3e3e3;
+  padding-top: 30px;
+  padding-bottom: 10px; }
 
 .comment-list {
   list-style: none; }
