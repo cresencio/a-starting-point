@@ -4,11 +4,11 @@ Theme URI: https://github.com/cresencio/asp-theme
 Author: @Cresencio
 Author URI: https://cresenc.io
 Description: A starter theme for WordPress development.
-Version: 1.6.1
+Version: 1.6.4
 License: GNU General Public License v2 or later
-License URI: LICENSE
+License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 Text Domain: a-starting-point
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Tags: blog, right-sidebar, custom-background, custom-header, editor-style, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
@@ -7380,6 +7380,9 @@ table {
   padding: 0.5rem; }
   .widget_recent_comments .recentcomments:hover {
     background-color: #f8f9fa; }
+
+.widget_recent_comments .recentcomments a {
+  word-break: break-word; }
 
 .widget_recent_entries ul {
   list-style: none;
